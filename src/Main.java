@@ -1,7 +1,11 @@
+import java.util.Locale;
 import java.util.Scanner;
+
+import static java.util.Locale.*;
 
 public class Main {
     public static void main(String[] args) {
+        Locale.setDefault(Locale.US);
         var sc = new Scanner(System.in);
 
         short option;
@@ -84,8 +88,24 @@ public class Main {
                 break;
 
             case 3:
+                double num = 0.00;
                 System.out.println("Exercicio 03\n" +
                                    "------------");
+
+                System.out.print("\nNúmero a ser analisado: ");
+                num = sc.nextDouble();
+
+                if (num >= 0 && num <= 25) {
+                    System.out.println("O seu número está no seguinte intervalo: 0 - 25");
+                }  else if (num > 25 && num <= 50) {
+                    System.out.println("O seu número está no seguinte intervalo: 25 - 50");
+                } else if (num > 50 && num <= 75) {
+                    System.out.println("O seu número está no seguinte intervalo: 50 - 75");
+                } else if (num > 75 && num <= 100) {
+                    System.out.println("O seu número está no seguinte intervalo: 75 - 100");
+                } else {
+                    System.out.println("Fora de intervalo");
+                }
                 break;
 
             case 4:
