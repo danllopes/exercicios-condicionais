@@ -26,7 +26,7 @@ public class Main {
 
         switch (option) {
             case 1:
-                int number;
+                int number = 0;
                 System.out.println("Exercicio 01\n" +
                                    "------------");
                 System.out.print("Número INTEIRO a ser analisado: ");
@@ -40,15 +40,57 @@ public class Main {
                 break;
 
             case 2:
-                System.out.println("Exercicio 02");
+                short product = 0;
+                int quantity = 0;
+                double price = 0.00;
+                System.out.println("Exercicio 02\n" +
+                                   "------------");
+
+                System.out.println("CODIGO         ESPECIFICAÇÃO        PREÇO\n" +
+                                   "-----------------------------------------\n" +
+                                   "  01          Cachorro Quente      R$4.00\n" +
+                                   "  02          X-Salada             R$4.50\n" +
+                                   "  03          X-Bacon              R$5.00\n" +
+                                   "  04          Torrada Simples      R$2.00\n" +
+                                   "  05          Refrigerante         R$1.50\n" +
+                                   "-----------------------------------------\n");
+
+                System.out.print("Produto: ");
+                product = sc.nextShort();
+
+                if (product < 1 || product > 5) {
+                    System.out.println("Produto indisponível");
+                    break;
+                }
+
+
+                System.out.print("Quantidade: ");
+                quantity = sc.nextInt();
+
+                if(product == 1) {
+                    price = quantity * 4;
+                } else if(product == 2) {
+                    price = quantity * 4.50;
+                } else if (product == 3) {
+                    price = quantity * 5;
+                } else if(product == 4) {
+                    price = quantity * 2;
+                } else {
+                    price = quantity * 1.50;
+                }
+
+                System.out.printf("\nValor da conta: R$ %.2f", price);
+
                 break;
 
             case 3:
-                System.out.println("Exercicio 03");
+                System.out.println("Exercicio 03\n" +
+                                   "------------");
                 break;
 
             case 4:
-                System.out.println("Exercicio 04");
+                System.out.println("Exercicio 04\n" +
+                                   "------------");
                 break;
 
             default:
