@@ -1,8 +1,6 @@
 import java.util.Locale;
 import java.util.Scanner;
 
-import static java.util.Locale.*;
-
 public class Main {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
@@ -30,7 +28,7 @@ public class Main {
 
         switch (option) {
             case 1:
-                int number = 0;
+                int number;
                 System.out.println("Exercicio 01\n" +
                                    "------------");
                 System.out.print("Número INTEIRO a ser analisado: ");
@@ -44,9 +42,9 @@ public class Main {
                 break;
 
             case 2:
-                short product = 0;
-                int quantity = 0;
-                double price = 0.00;
+                short product;
+                int quantity;
+                double price;
                 System.out.println("Exercicio 02\n" +
                                    "------------");
 
@@ -88,7 +86,7 @@ public class Main {
                 break;
 
             case 3:
-                double num = 0.00;
+                double num;
                 System.out.println("Exercicio 03\n" +
                                    "------------");
 
@@ -109,8 +107,29 @@ public class Main {
                 break;
 
             case 4:
+
+                double salary;
+                double incomeTax;
                 System.out.println("Exercicio 04\n" +
                                    "------------");
+
+                System.out.print("\nInforme sua renda mensal: R$ ");
+                salary = sc.nextDouble();
+
+                if (salary <= 2000) {
+                    System.out.println("\nValor do Imposto: Isento");
+                } else {
+                    double taxableAmount = salary - 2000;
+                    if (salary >= 2000.01 && salary <= 3000) {
+                        incomeTax = taxableAmount * 0.08;
+                    } else if (salary >= 3000.01 && salary <= 4500) {
+                        incomeTax = (taxableAmount - 1000) * 0.18 + 1000 * 0.08;
+                    } else {
+                        incomeTax = (taxableAmount - 2500) * 0.28 + 1500 * 0.18 + 1000 * 0.08;
+                    }
+
+                    System.out.printf("\nValor do Imposto: R$ %.2f", incomeTax);
+                }
                 break;
 
             default:
